@@ -4,3 +4,25 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+main {
+    background-color: #6495ed;
+    height: 100vh;
+    display: flex;
+    color: #008080;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.countdown-container {
+    margin: auto;
+    padding: 1rem;
+    background-color: white;
+    text-align: center;
+}
+
+.wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}

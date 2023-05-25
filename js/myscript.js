@@ -1,6 +1,6 @@
 const lessonTime = new Date();
 lessonTime.setDate(lessonTime.getDate() + 1);
-lessonTime.setHours(9, 30, 0, 0);
+lessonTime.setHours(9, 30);
 
 const countdown = setInterval(function() {
 
