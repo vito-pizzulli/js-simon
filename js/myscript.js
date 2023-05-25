@@ -1,9 +1,10 @@
 const lessonTime = new Date();
-const today = lessonTime.getDay();
+const dayOfWeek = lessonTime.getDay();
 
-if (today == 5) {
+/* BONUS - dayOfWeek restituisce un valore da 0 a 6, corrispondente a uno dei giorni della settimana, quello odierno. Volendo escludere dal nostro countdown il sabato e la domenica nei quali non c'è lezione, nel caso dayOfWeek abbia valore 5 ovvero corrispondente al venerdì, settiamo la data assegnata a lessonTime tra 3 giorni. Nel caso abbia valore 6, ovvero corrispondente al sabato, settiamo la data tra 2 giorni. In tutti gli altri casi settiamo la data tra 1 giorno. */
+if (dayOfWeek == 5) {
     lessonTime.setDate(lessonTime.getDate() + 3);
-} else if (today == 6) {
+} else if (dayOfWeek == 6) {
     lessonTime.setDate(lessonTime.getDate() + 2);
 } else {
     lessonTime.setDate(lessonTime.getDate() + 1);
