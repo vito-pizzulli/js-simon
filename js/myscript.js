@@ -1,6 +1,16 @@
 const lessonTime = new Date();
-lessonTime.setDate(lessonTime.getDate() + 1);
+const today = lessonTime.getDay();
+
+if (today == 5) {
+    lessonTime.setDate(lessonTime.getDate() + 3);
+} else if (today == 6) {
+    lessonTime.setDate(lessonTime.getDate() + 2);
+} else {
+    lessonTime.setDate(lessonTime.getDate() + 1);
+}
+
 lessonTime.setHours(9, 30);
+
 const daysContainer = document.getElementById('days');
 const hoursContainer = document.getElementById('hours');
 const minutesContainer = document.getElementById('minutes');
@@ -9,22 +19,24 @@ const countdownContainer = document.querySelector('.countdown-container');
 
 const countdown = setInterval(function() {
     
-    daysContainer.innerHTML = 0;
     const currentTime = new Date();
     const timeLeft = lessonTime - currentTime;
 
     let leftSeconds = Math.floor(timeLeft / 1000);
     let leftMinutes = Math.floor(leftSeconds / 60);
-    const leftHours = Math.floor(leftMinutes / 60);
+    let leftHours = Math.floor(leftMinutes / 60);
+    const leftDays = Math.floor(leftHours / 24);
 
     leftSeconds = leftSeconds % 60;
     leftMinutes = leftMinutes % 60;
+    leftHours = leftHours % 24;
     
+    daysContainer.innerHTML = leftDays;
     hoursContainer.innerHTML = leftHours;
     minutesContainer.innerHTML = leftMinutes;
     secondsContainer.innerHTML = leftSeconds;
 
-    console.log('Time to the next lesson: ' + leftHours + ":" + leftMinutes + ":" + leftSeconds);
+    console.log('Time to the next lesson: ' + leftDays + " days, " + leftHours + " hours, " + leftMinutes + " minutes, " + leftSeconds + " seconds.");
 
     if (timeLeft < 0) {
         clearInterval(countdown);
