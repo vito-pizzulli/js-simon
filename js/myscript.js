@@ -34,7 +34,6 @@ const countdown = setInterval(function() {
  * 
  * @param {*} type The type of html element that will be created. 
  * @param {*} innerText The text that the created element will have inside.
- * @param {*} class The name of the class that will be added to the created element.
  * @param {*} container The container at the end of which the element will be added.
  */
 function addElement(type, innerText, container) {
