@@ -10,7 +10,7 @@ main {
     height: 100vh;
     display: flex;
     color: #008080;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .countdown-container {
