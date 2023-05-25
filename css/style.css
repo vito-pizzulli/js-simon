@@ -13,16 +13,67 @@ main {
     font-family: 'Montserrat', sans-serif;
 }
 
-.countdown-container {
+div.countdown-container {
     margin: auto;
     padding: 1rem;
     background-color: white;
     text-align: center;
+    width: 50%;
+    border-radius: 20px;
 }
 
-.wrapper {
+div.wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
+}
+
+h1 {
+    margin: 1rem;
+}
+
+span {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+h3 {
+    font-size: 4rem;
+    color: red;
+}
+
+
+/* Responsive Layouts */
+
+/* XS Layout (from 0px to 576px */
+@media screen and (max-width: 576px) {
+    div.countdown-container {
+        width: 90%;
+    }
+
+    span {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 1rem;
+    }
+}
+
+/* 2K Layout (from 2560px to 3840px */
+@media screen and (min-width: 2560px) {
+    html {
+        font-size: 30px;
+    }
+}
+
+/* 4K Layout (from 3840px to higher resolutions */
+@media screen and (min-width: 3840px) {
+    html {
+        font-size: 40px;
+    }
 }
