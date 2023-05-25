@@ -12,14 +12,19 @@ const countdown = setInterval(function() {
     daysContainer.innerHTML = 0;
     const currentTime = new Date();
     const timeLeft = lessonTime - currentTime;
-    const leftHours = Math.floor(timeLeft / (60 * 60 * 1000));
-    const leftMinutes = Math.floor((timeLeft % (60 * 60 * 1000)) / (60 * 1000));
-    const leftSeconds = Math.floor((timeLeft % (60 * 1000)) / 1000);
+
+    let leftSeconds = Math.floor(timeLeft / 1000);
+    let leftMinutes = Math.floor(leftSeconds / 60);
+    const leftHours = Math.floor(leftMinutes / 60);
+
+    leftSeconds = leftSeconds % 60;
+    leftMinutes = leftMinutes % 60;
+    
     hoursContainer.innerHTML = leftHours;
     minutesContainer.innerHTML = leftMinutes;
     secondsContainer.innerHTML = leftSeconds;
 
-    console.log('Tempo rimanente: ' + leftHours + ":" + leftMinutes + ":" + leftSeconds);
+    console.log('Time to the next lesson: ' + leftHours + ":" + leftMinutes + ":" + leftSeconds);
 
     if (timeLeft < 0) {
         clearInterval(countdown);
